@@ -1,0 +1,9 @@
+@use "../utils/variables" as *;
+
+.header {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) -75%,
+    rgba(255, 255, 255, 0) 85%
+  );
+}

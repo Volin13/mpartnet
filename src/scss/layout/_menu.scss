@@ -1,0 +1,13 @@
+@use "../utils/variables" as *;
+
+menu {
+  position: relative;
+  &__logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  &__list {
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,9 @@
+@use "./utils/variables" as *;
+@use "./base/base" as base;
+@use "./base/body" as body;
+@use "./base/container" as container;
+
+@use "./layout/header" as header;
+@use "./layout/menu" as menu;
+@use "./layout/main" as main;
+@use "./layout/footer" as footer;
