@@ -1,0 +1,111 @@
+@use "../utils/variables" as *;
+.contacts {
+  &__icon {
+    height: 20px;
+    width: 20px;
+  }
+  &__line {
+    margin: 10px 0 20px;
+  }
+  &__mainList {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+  }
+  &__mainlistItem {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__contactsList,
+  &__hours {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+  &__contactsList {
+    font-size: 18px;
+    justify-content: space-around;
+  }
+  &__contactsList span {
+    display: none;
+  }
+}
+.contacts__contactsList {
+  a {
+    transition: all 300ms;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $primary_white;
+      transform: scale(1.1);
+
+      .contacts__icon {
+        animation: vibrate 0.3s linear;
+      }
+    }
+  }
+}
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 375px) {
+}
+@media screen and (min-width: 768px) {
+  .contacts {
+    &__contactsList,
+    &__hours {
+      width: 100%;
+      flex-direction: row;
+      gap: 25px;
+    }
+    &__contactsList {
+      font-size: 26px;
+    }
+  }
+}
+@media screen and (min-width: 990px) {
+}
+@media screen and (min-width: 1280px) {
+  .contacts {
+    &__contactsList {
+      justify-content: center;
+      gap: 25px;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+}
+@media screen and (min-width: 1920px) {
+  .contacts {
+    &__contactsList br {
+      display: none;
+    }
+    &__contactsList span {
+      display: inline;
+    }
+  }
+}

@@ -1,11 +1,13 @@
 @use "../utils/variables" as *;
 body {
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: "Tektur", serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   background-color: $bg_color;
   color: $primary_white;
@@ -17,11 +19,16 @@ body {
   align-items: center;
   justify-content: center;
   scroll-snap-align: start;
-  border-bottom: 1px solid $primary_gray;
 }
 @media screen and (min-width: 375px) {
 }
 @media screen and (min-width: 768px) {
+  .section {
+    padding-top: 15%;
+  }
+  body {
+    font-size: 20px;
+  }
 }
 @media screen and (min-width: 990px) {
 }
@@ -29,11 +36,11 @@ body {
 }
 @media screen and (min-width: 1440px) {
   body {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 1920px) {
   body {
-    font-size: 20px;
+    font-size: 26px;
   }
 }

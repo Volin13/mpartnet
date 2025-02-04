@@ -109,9 +109,7 @@ table {
 hr {
   margin: 0;
 }
-section {
-  padding-top: 100px;
-}
+
 svg {
   height: auto;
 }
@@ -120,9 +118,31 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+nav {
   font-weight: 600;
-  text-align: center;
+  font-family: "Electrolize", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  font-family: "Tektur", serif;
+  font-optical-sizing: auto;
+  font-style: bold;
+  font-variation-settings: "wdth" 100;
+
+  text-transform: uppercase;
+  color: $primary_white;
+  font-size: 100px;
+  // font-weight: bold;
+  // background:
+  //   repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px
+  //     2500px,
+  //   repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/2500px
+  //     2500px;
+  // background-blend-mode: difference;
+  // mix-blend-mode: lighten;
+  // -webkit-background-clip: text;
+  // background-clip: text;
 }
 h1 {
   font-size: 32px;
@@ -146,53 +166,156 @@ a {
 address {
   font-style: normal;
 }
-h1 {
-  color: $primary_white;
-}
-h2 {
-  color: $primary_gray;
-}
-.section {
-  padding-top: 20px;
-}
+
 p {
   text-indent: 10px;
+}
+
+.custom-bullet {
+  width: 20px;
+  height: 20px;
+  background:
+    repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px
+      2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/2500px
+      2500px;
+  background-blend-mode: difference;
+  mix-blend-mode: lighten;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-bullet:hover,
+.custom-bullet.swiper-pagination-bullet-active {
+  background: $primary_white;
+  color: white;
+}
+.swiper .swiper-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.swiper .swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  width: fit-content;
+  width: 900px !important;
+  margin: 0 auto;
+  background-color: $secondary_gray;
+  border-radius: 10px;
+  padding: 50px 30px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10% !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.scrollToTop {
+  &-btn {
+    cursor: pointer;
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    background-color: $bg_color;
+    border: 1px solid $primary_white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+
+    transition: transform 500ms;
+    &:hover {
+      transform: scale(1.1);
+      animation: boxShadowAnimation 5s ease-out forwards infinite;
+    }
+  }
+  &-icon {
+    height: 40px;
+    width: 40px;
+    transform: translate(-50%, -50%) rotate(180deg);
+    transform-origin: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+  }
+}
+.logo__link,
+.scrollToTop-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logo__link.visible,
+.scrollToTop-btn.visible {
+  opacity: 1;
+}
+
+@keyframes boxShadowAnimation {
+  0% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px 30px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.15);
+  }
 }
 
 @media screen and (min-width: 375px) {
 }
 @media screen and (min-width: 768px) {
-  .section {
-    padding-top: 30px;
-  }
   p {
     text-indent: 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .scrollToTop {
+    &-btn {
+      bottom: 100px;
+      right: 50px;
+    }
   }
 }
 @media screen and (min-width: 990px) {
 }
 @media screen and (min-width: 1280px) {
-  .section {
-    padding-top: 40px;
-  }
   p {
     text-indent: 30px;
   }
 }
 @media screen and (min-width: 1440px) {
   h1 {
-    font-size: 48px;
+    font-size: 50px;
   }
   h2 {
-    font-size: 38px;
+    font-size: 40px;
     line-height: 1.25;
-    margin-bottom: 50px;
   }
   h3 {
-    font-size: 20px;
-  }
-  .section {
-    padding-top: 50px;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -200,15 +323,11 @@ p {
     font-size: 58px;
   }
   h2 {
-    font-size: 48px;
+    font-size: 42px;
     line-height: 1.25;
-    margin-bottom: 50px;
   }
   h3 {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 600;
-  }
-  .section {
-    padding-top: 60px;
   }
 }

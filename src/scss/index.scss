@@ -5,5 +5,10 @@
 
 @use "./layout/header" as header;
 @use "./layout/menu" as menu;
-@use "./layout/main" as main;
+@use "./layout/about" as about;
+@use "./layout/partners" as partners;
+@use "./layout/candidats" as candidats;
+@use "./layout/benefits" as benefits;
+@use "./layout/contacts" as contacts;
+
 @use "./layout/footer" as footer;
