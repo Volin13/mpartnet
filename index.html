@@ -53,6 +53,9 @@
   </head>
   <body>
     <div class="container">
+      <div id="preloader" class="preloader">
+        <div class="loader"></div>
+      </div>
       <header id="header" class="section headerThumb header"></header>
       <section id="menu" class="menu section"></section>
       <section id="about" class="main section"></section>
@@ -69,5 +72,15 @@
         class="scrollToTop-icon"
       />
     </a>
+
+    <script>
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.opacity = "0";
+          setTimeout(() => (preloader.style.display = "none"), 500);
+        }
+      });
+    </script>
   </body>
 </html>

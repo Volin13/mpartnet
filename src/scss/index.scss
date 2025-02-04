@@ -1,4 +1,6 @@
 @use "./utils/variables" as *;
+@use "./utils/loader" as loader;
+
 @use "./base/base" as base;
 @use "./base/body" as body;
 @use "./base/container" as container;
