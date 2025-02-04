@@ -1,8 +1,11 @@
 .jobs {
+  &__content {
+    max-width: 100%;
+  }
   &__table {
     overflow: auto;
     padding-right: 15px;
-    max-height: 395px;
+    max-height: 600px;
     &::-webkit-scrollbar {
       width: 5px;
     }
@@ -17,6 +20,20 @@
     }
   }
   &__salary {
-    text-align: center;
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .jobs {
+    &__content {
+      max-width: auto;
+    }
+    &__table {
+      max-height: 395px;
+    }
+    &__salary {
+      text-align: center;
+    }
   }
 }

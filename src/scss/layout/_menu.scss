@@ -77,17 +77,45 @@
       text-align: center;
       flex-direction: column;
       align-self: center;
-      gap: 30px;
+      gap: 0;
       text-transform: uppercase;
       font-size: 35px;
     }
     &__link {
       transition: color 500ms;
       display: inline-block;
-      overflow: hidden;
-      &:hover {
-        color: $primary_gray;
+      &-position {
+        position: relative;
       }
+    }
+    &__link {
+      padding: 15px;
+    }
+    &__link:before,
+    &__link:after {
+      content: "";
+      position: absolute;
+      transition: transform 0.5s ease;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-style: solid;
+      border-radius: 5px;
+      border-color: $primary_white;
+      box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.15);
+    }
+    &__link:before {
+      border-width: 2px 0 2px 0;
+      transform: scaleX(0);
+    }
+    &__link:after {
+      border-width: 0 2px 0 2px;
+      transform: scaleY(0);
+    }
+    &__link:hover:before,
+    &__link:hover:after {
+      transform: scale(1, 1);
     }
   }
   .logo__link::after {

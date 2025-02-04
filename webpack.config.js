@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const path = require("path");
-const languages = ["ru", "uk"];
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -16,7 +15,6 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    // publicPath: '/portfolio/',
     publicPath: "/",
   },
   module: {
@@ -93,36 +91,23 @@ module.exports = {
       template: `./index.html`,
       chunks: ["index"],
     }),
-
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: true,
+      protectWebpackAssets: false,
+      cleanOnceBeforeBuildPatterns: ["**/*", "!assets/**/*"],
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    new CompressionPlugin(),
-    ...(process.env.NODE_ENV === "development"
-      ? [
-          new CleanWebpackPlugin({
-            cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false,
-            cleanOnceBeforeBuildPatterns: ["**/*", "!assets/**/*"],
-          }),
-        ]
-      : []),
+    ...(process.env.NODE_ENV === "production" ? [new CompressionPlugin()] : []),
     new CopyWebpackPlugin({
       patterns: [
-        {
-          from: "src/assets/images",
-          to: "assets",
-        },
-        {
-          from: "src/assets/favicon",
-          to: "assets",
-        },
-        {
-          from: "src/assets/sprite.svg",
-          to: "assets",
-        },
+        { from: "src/assets/images", to: "assets" },
+        { from: "src/assets/favicon", to: "assets" },
+        { from: "src/assets/sprite.svg", to: "assets" },
+        { from: "./static/_headers", to: "./" },
+        { from: "./static/sitemap.xml", to: "./" },
+        { from: "./static/robots.txt", to: "./" },
       ],
     }),
-    new TerserPlugin(),
-    new CssMinimizerPlugin(),
   ],
   devServer: {
     static: {
@@ -131,26 +116,10 @@ module.exports = {
     compress: true,
     port: 9000,
     hot: true,
-    // historyApiFallback: {
-    //   rewrites: [
-    //     {
-    //       from: /^\/projects\/(\d+)(\?lang=(en|uk))?$/,
-    //       to: context => {
-    //         const searchParams = new URLSearchParams(context.parsedUrl.search);
-    //         const id = context.parsedUrl.pathname.split('/').pop();
-    //         const lang = searchParams.get('lang') || 'uk';
-    //         return `/projectDetails-${id}_${lang}.html`;
-    //       },
-    //     },
-    //     { from: /^\/$/, to: '/index_uk.html' },
-    //     {
-    //       from: /^\/(\?lang=uk)?$/,
-    //       to: '/index_uk.html',
-    //     },
-    //   ],
-    // },
   },
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     splitChunks: {
       cacheGroups: {
         common: {
