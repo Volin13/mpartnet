@@ -12,7 +12,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 7px;
 
     justify-content: start;
     align-items: center;
@@ -35,7 +35,22 @@
     }
   }
   &__accent {
-    color: #6d878f;
+    font-weight: 800;
+  }
+  &__overflow {
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -105,20 +120,23 @@
   .about {
     &__container {
       padding: 30px 50px;
+      gap: 1;
     }
     &__list {
       grid-template-columns: 1fr 1fr;
       gap: 26px;
       overflow: auto;
     }
-    &__container {
-      height: 75%;
-    }
   }
 }
 @media screen and (min-width: 990px) {
 }
 @media screen and (min-width: 1280px) {
+  .about {
+    &__container {
+      gap: 20px;
+    }
+  }
 }
 @media screen and (min-width: 1440px) {
   .about {

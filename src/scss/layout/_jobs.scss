@@ -1,0 +1,22 @@
+.jobs {
+  &__table {
+    overflow: auto;
+    padding-right: 15px;
+    max-height: 395px;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__salary {
+    text-align: center;
+  }
+}

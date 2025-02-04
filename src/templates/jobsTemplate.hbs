@@ -1,0 +1,18 @@
+<div class="jobs__table">
+  <table>
+    <thead>
+      <tr>
+        <th>Вакансия</th>
+        <th>Рекомендованная оплата (€/час)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each jobs}}
+        <tr>
+          <td class="jobs__title">{{this.title}}</td>
+          <td class="jobs__salary">{{this.salary}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

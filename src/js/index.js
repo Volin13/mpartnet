@@ -13,6 +13,6 @@ import "../js/loadHtml";
 import "../js/menuScript";
 import "../js/showFixedEl";
 import "./sliders";
-// import "../js/hbsLoader";
+import "../js/loadHbs";
 
 //   import '../js/main/languageScript';

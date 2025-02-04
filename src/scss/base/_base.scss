@@ -196,26 +196,10 @@ p {
   background: $primary_white;
   color: white;
 }
-.swiper .swiper-wrapper {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.swiper .swiper-slide {
-  flex-shrink: 0;
-  width: 100%;
-  width: fit-content;
-  width: 900px !important;
-  margin: 0 auto;
-  background-color: $secondary_gray;
-  border-radius: 10px;
-  padding: 50px 30px;
-}
 
 .swiper-pagination {
   position: absolute;
-  bottom: 10% !important;
+  bottom: 5% !important;
   left: 50% !important;
   transform: translateX(-50%);
   display: flex;
@@ -250,6 +234,20 @@ p {
     position: absolute;
     top: 45%;
     left: 50%;
+  }
+}
+.customScroll {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 .logo__link,
@@ -294,7 +292,7 @@ p {
   }
   .scrollToTop {
     &-btn {
-      bottom: 100px;
+      bottom: 50px;
       right: 50px;
     }
   }
@@ -304,6 +302,11 @@ p {
 @media screen and (min-width: 1280px) {
   p {
     text-indent: 30px;
+  }
+  .scrollToTop {
+    &-btn {
+      bottom: 100px;
+    }
   }
 }
 @media screen and (min-width: 1440px) {

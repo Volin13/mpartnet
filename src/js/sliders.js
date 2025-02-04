@@ -22,13 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loop: true,
     grabCursor: true,
-    mousewheel: true,
+    mousewheel: false,
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
       delay: 4500,
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
+    },
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 0.5,
     },
     pagination: {
       el: ".partnersSwiper__pagination",
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loop: true,
     grabCursor: true,
-    mousewheel: true,
+    mousewheel: false,
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
@@ -76,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loop: true,
     grabCursor: true,
-    mousewheel: true,
+    mousewheel: false,
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
