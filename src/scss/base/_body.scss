@@ -18,7 +18,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: start;
 }
 @media screen and (min-width: 375px) {
 }
@@ -35,6 +34,7 @@ body {
 @media screen and (min-width: 1280px) {
   .section {
     padding-top: 15%;
+    scroll-snap-align: start;
   }
 }
 @media screen and (min-width: 1440px) {

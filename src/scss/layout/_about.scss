@@ -120,7 +120,7 @@
   .about {
     &__container {
       padding: 30px 50px;
-      gap: 1;
+      gap: 0;
     }
     &__list {
       grid-template-columns: 1fr 1fr;
@@ -132,11 +132,6 @@
 @media screen and (min-width: 990px) {
 }
 @media screen and (min-width: 1280px) {
-  .about {
-    &__container {
-      gap: 20px;
-    }
-  }
 }
 @media screen and (min-width: 1440px) {
   .about {

@@ -5,8 +5,7 @@
   padding-right: 16px;
   height: 100vh;
   scrollbar-width: none;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
 }
 .container::-webkit-scrollbar {
   display: none;
@@ -23,6 +22,7 @@
     max-width: 768px;
     padding-left: 30px;
     padding-right: 30px;
+    overflow-x: visible;
   }
 }
 @media screen and (min-width: 990px) {
@@ -37,6 +37,8 @@
     max-width: 1280px;
     padding-left: 60px;
     padding-right: 60px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
   }
 }
 @media screen and (min-width: 1440px) {

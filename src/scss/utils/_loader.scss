@@ -6,7 +6,7 @@ $Loader-size: 14.6rem;
 $Loader-offset: 1.7rem;
 $Loader-timing: ease-in-out;
 .preloader {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   display: flex;
   justify-content: center;

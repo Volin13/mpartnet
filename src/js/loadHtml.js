@@ -9,8 +9,8 @@ import partnersHTML from "../partials/partners.html";
 import partnersTemplate from "../templates/partners.hbs";
 import candidatsHTML from "../partials/candidats.html";
 import candidatsTemplate from "../templates/candidats.hbs";
-import jobsHTML from "../partials/jobs.html";
-import jobsTemplate from "../templates/jobs.hbs";
+// import jobsHTML from "../partials/jobs.html";
+// import jobsTemplate from "../templates/jobs.hbs";
 import benefitsHTML from "../partials/benefits.html";
 import benefitsTemplate from "../templates/benefits.hbs";
 import contactsHTML from "../partials/contacts.html";
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderContent("about", aboutTemplate, aboutHTML);
   renderContent("partners", partnersTemplate, partnersHTML);
   renderContent("candidats", candidatsTemplate, candidatsHTML);
-  renderContent("jobs", jobsTemplate, jobsHTML);
+  // renderContent("jobs", jobsTemplate, jobsHTML);
   renderContent("benefits", benefitsTemplate, benefitsHTML);
   renderContent("contacts", contactsTemplate, contactsHTML);
 
