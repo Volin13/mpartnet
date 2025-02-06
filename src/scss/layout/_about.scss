@@ -16,9 +16,15 @@
 
     justify-content: start;
     align-items: center;
+    &-mobilePadding {
+      padding: 15px 20px;
+    }
   }
   &__title {
     text-align: center;
+    &-secondary {
+      font-size: 22px;
+    }
   }
   &__line {
     width: 100%;
