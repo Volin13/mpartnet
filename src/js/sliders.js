@@ -61,6 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
     },
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 0.5,
+    },
     pagination: {
       el: ".benefitsSwiper__pagination",
       clickable: true,
@@ -87,6 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 4500,
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
+    },
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 0.5,
     },
     pagination: {
       el: ".candidatsSwiper__pagination",

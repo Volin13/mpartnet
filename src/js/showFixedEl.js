@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuSection = document.getElementById("menu");
 
   const fixedLogo = document.querySelector(".logo__link");
-  const scrollToTopBtn = document.querySelector(".scrollToTop-btn");
+  // const scrollToTopBtn = document.querySelector(".scrollToTop-btn");
 
   const createObserver = (element, section) => {
     const observer = new IntersectionObserver(
@@ -34,6 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createObserver(fixedLogo, headerSection);
 
-  createObserver(scrollToTopBtn, headerSection);
-  createObserver(scrollToTopBtn, menuSection);
+  // createObserver(scrollToTopBtn, headerSection);
+  // createObserver(scrollToTopBtn, menuSection);
 });

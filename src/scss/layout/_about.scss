@@ -125,8 +125,8 @@
 @media screen and (min-width: 768px) {
   .about {
     &__container {
-      padding: 30px 50px;
-      gap: 0;
+      padding: 20px 50px;
+      gap: 10px;
     }
     &__list {
       grid-template-columns: 1fr 1fr;
@@ -136,6 +136,11 @@
   }
 }
 @media screen and (min-width: 990px) {
+  .about {
+    &__list {
+      gap: 10px;
+    }
+  }
 }
 @media screen and (min-width: 1280px) {
 }
@@ -149,5 +154,14 @@
 @media screen and (min-width: 1920px) {
   body {
     font-size: 26px;
+    max-height: 750px;
+  }
+  .about {
+    &__list {
+      gap: 20px;
+    }
+    &__container {
+      padding: 30px 50px;
+    }
   }
 }
