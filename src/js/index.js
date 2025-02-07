@@ -3,6 +3,7 @@ if (module.hot) {
     console.log("Index module updated.");
   });
 }
+
 import "../../node_modules/modern-normalize/modern-normalize.css";
 import "swiper/css";
 import "swiper/css/navigation";
