@@ -102,9 +102,12 @@ module.exports = {
       patterns: [
         { from: "src/assets/images", to: "assets" },
         { from: "src/assets/favicon", to: "assets" },
+        { from: "src/assets/favicon/favicon.ico", to: "favicon.ico" },
+        { from: "src/assets/favicon/site.webmanifest", to: "site.webmanifest" },
         { from: "src/assets/sprite.svg", to: "assets" },
         { from: "./static/_headers", to: "./" },
         { from: "./static/sitemap.xml", to: "./" },
+        { from: "./static/google094919d9efdd92de.html", to: "./" },
         { from: "./static/robots.txt", to: "./" },
       ],
     }),
